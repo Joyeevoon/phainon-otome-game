@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<title>夏日贴纸 · 人鱼泡澡</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="stage">
+    <div id="frame">
+      <!-- 游戏视频：待机 / 说话 -->
+      <video id="vidIdle" src="assets/video/idle.mp4" muted playsinline preload="none"></video>
+      <video id="vidSpeaking" src="assets/video/speaking.mp4" muted playsinline preload="none"></video>
+
+      <!-- 好感度（右侧竖条） -->
+      <div id="favor">
+        <div id="favorPct">0%</div>
+        <div id="favorTrack"><div id="favorFill"></div></div>
+        <div id="favorHeart">💗</div>
+      </div>
+
+      <!-- 完成提示 -->
+      <div id="finale">今日贴纸已完成</div>
+
+      <!-- 顶部提示 -->
+      <div id="hint">♪</div>
+
+      <!-- 台词气泡 -->
+      <div id="bubble"></div>
+
+      <!-- 底部贴纸栏 -->
+      <div id="dock"></div>
+
+      <!-- 音乐开关（首页与游戏共用） -->
+      <button id="musicBtn" class="on" title="音乐：开">♪</button>
+      <button id="homeBtn" hidden title="回到首页" aria-label="回到首页">首页</button>
+
+      <!-- 首页：视频1 + 点击开始 -->
+      <div id="homeOverlay">
+        <video id="vidHome" src="assets/video/home.mp4" muted autoplay loop playsinline preload="auto"></video>
+        <div id="tapStart">点击开始</div>
+      </div>
+
+      <!-- 加载层：浅蓝底 + 角色悬浮在进度条上 -->
+      <div id="loader" class="dormant">
+        <div class="loader-inner">
+          <img id="loaderChibi" src="assets/stickers/chibi.webp" alt="" />
+          <div class="bar"><i></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 拖拽幽灵 -->
+  <div id="ghost"></div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
